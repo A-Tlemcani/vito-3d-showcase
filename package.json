@@ -1,0 +1,16 @@
+{
+  "name": "vitorio",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Premium Italian restaurant website: 3D hero, filterable menu, table reservation with live slot availability.",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "tsc --noEmit",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": { "three": "0.186.1" },
+  "devDependencies": { "@types/three": "0.186.0", "typescript": "5.9.3", "vite": "8.3.4" },
+  "engines": { "node": ">=20" }
+}
