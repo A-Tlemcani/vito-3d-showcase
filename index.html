@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>Vitorio — Cucina italiana in Lyon · Book a table</title>
+    <meta name="description" content="Vitorio is an Italian restaurant in Lyon's Presqu'île: hand-made pasta, Roman classics and 300 Italian wines. See the menu and book a table online in seconds." />
+    <meta name="theme-color" content="#1a120d" />
+    <link rel="canonical" href="https://abdeltl.github.io/vitorio/" />
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <meta property="og:title" content="Vitorio — Cucina italiana" />
+    <meta property="og:description" content="Hand-made pasta, Roman classics, 300 Italian wines. Book a table online." />
+    <meta property="og:type" content="restaurant" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org", "@type": "Restaurant", "name": "Vitorio",
+        "servesCuisine": ["Italian"], "priceRange": "€€€", "acceptsReservations": true,
+        "address": { "@type": "PostalAddress", "streetAddress": "12 rue Mercière (fictional)", "addressLocality": "Lyon", "postalCode": "69002", "addressCountry": "FR" },
+        "openingHoursSpecification": [
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Wednesday", "Thursday", "Friday", "Saturday"], "opens": "12:00", "closes": "14:30" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], "opens": "19:00", "closes": "23:30" },
+          { "@type": "OpeningHoursSpecification", "dayOfWeek": "Sunday", "opens": "12:00", "closes": "15:00" }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <p class="demo-banner">Concept demo by <a href="https://abdeltl.github.io/" target="_blank" rel="noopener noreferrer">Abderrahman Tlemcani</a>: fictional restaurant, reservations are simulated.</p>
+    <header class="nav">
+      <a class="logo" href="#top">Vitorio</a>
+      <nav aria-label="Primary"><a href="#storia">La storia</a><a href="#menu">Menu</a><a href="#visit">Visit</a></nav>
+      <a class="btn btn-red" href="#prenota">Book a table</a>
+    </header>
+    <main id="top">
+      <section class="hero" data-webgl>
+        <canvas id="scene" aria-hidden="true"></canvas>
+        <div class="hero-copy">
+          <p class="kicker">Cucina italiana · Lyon · dal 1987</p>
+          <h1>La dolce<br /><i>vita</i>, served<br />nightly.</h1>
+          <p class="sub">Hand-made pasta every morning, Roman classics, and three hundred Italian wines in the cellar beneath your table.</p>
+          <div class="actions"><a class="btn btn-red" href="#prenota">Prenota un tavolo</a><a class="btn btn-ghost" href="#menu">See the menu</a></div>
+        </div>
+        <p class="hero-badge" aria-hidden="true"><span>Pasta fresca</span><span>·</span><span>Vini naturali</span><span>·</span><span>Forno a legna</span></p>
+      </section>
+
+      <section class="story" id="storia">
+        <div class="story-num"><strong>1987</strong><span>Nonna Lucia opens a six-table trattoria on rue Mercière.</span></div>
+        <div class="story-copy">
+          <p class="kicker">La storia</p>
+          <h2>Three generations, one recipe book.</h2>
+          <p>Vitorio began as Lucia Vitorio's trattoria, with handwritten recipes from Rome and Bologna. Today her grandson Marco cooks from the same notebook, with produce from Lyon's markets and a wood-fired oven built by hand in 2019.</p>
+          <ul class="numbers"><li><strong>38</strong>years of service</li><li><strong>300+</strong>Italian wines</li><li><strong>6 kg</strong>of pasta rolled daily</li></ul>
+        </div>
+      </section>
+
+      <section class="menu-section" id="menu">
+        <div class="menu-head">
+          <p class="kicker">Il menu</p>
+          <h2>From the market to the table.</h2>
+          <div class="menu-controls">
+            <div class="tabs" role="tablist" aria-label="Menu courses" id="tabs"></div>
+            <div class="filters" id="filters" role="group" aria-label="Dietary filters"></div>
+          </div>
+        </div>
+        <div id="menu-panel" role="tabpanel" class="dishes" aria-live="polite"></div>
+        <aside class="tasting">
+          <div><p class="kicker">Percorso degustazione</p><h3>Chef's tasting menu: seven courses</h3><p>Seven courses that change with the season, with an optional pairing of five wines chosen by our sommelier Giulia.</p></div>
+          <p class="tasting-price"><strong>€89</strong><span>+ €55 wine pairing</span></p>
+        </aside>
+      </section>
+
+      <section class="reserve" id="prenota">
+        <div class="reserve-copy">
+          <p class="kicker">Prenota</p>
+          <h2>Book your table.</h2>
+          <p>Online booking for up to 8 guests. For larger groups or private dining in the wine cellar (up to 24), please call us.</p>
+          <dl class="hours" id="visit">
+            <div><dt>Tue</dt><dd>Dinner 19:00 – 23:30</dd></div>
+            <div><dt>Wed – Sat</dt><dd>Lunch 12:00 – 14:30 · Dinner 19:00 – 23:30</dd></div>
+            <div><dt>Sun</dt><dd>Lunch 12:00 – 15:00</dd></div>
+            <div><dt>Mon</dt><dd>Chiuso (closed)</dd></div>
+          </dl>
+          <p class="address">12 rue Mercière, 69002 Lyon (fictional) · <a href="https://www.openstreetmap.org/search?query=rue%20Merci%C3%A8re%20Lyon" target="_blank" rel="noopener noreferrer">Open map ↗</a></p>
+        </div>
+        <form class="reserve-form" id="reserve-form" novalidate>
+          <div class="row">
+            <label>Date<input type="date" id="r-date" name="date" required /></label>
+            <label>Guests<select id="r-party" name="party"></select></label>
+          </div>
+          <fieldset class="slots-wrap">
+            <legend>Time</legend>
+            <div id="slots" class="slots"></div>
+          </fieldset>
+          <div class="row">
+            <label>Name<input name="name" autocomplete="name" required minlength="2" maxlength="80" /></label>
+            <label>Phone<input name="phone" type="tel" autocomplete="tel" required pattern="[0-9+ ().-]{8,20}" /></label>
+          </div>
+          <label>Email<input name="email" type="email" autocomplete="email" required maxlength="120" /></label>
+          <label>Occasion or allergies <span class="opt">(optional)</span><textarea name="notes" rows="2" maxlength="300"></textarea></label>
+          <p class="error" id="r-error" role="alert"></p>
+          <button class="btn btn-red btn-block" type="submit">Confirm reservation</button>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <p class="logo">Vitorio</p>
+      <p>Design & development: <a href="https://abdeltl.github.io/" target="_blank" rel="noopener noreferrer">Abderrahman Tlemcani</a> · Demo website: no real reservations.</p>
+    </footer>
+    <dialog id="done" class="done">
+      <form method="dialog"><p class="kicker">Grazie!</p><h2 id="done-title"></h2><p id="done-body"></p><button class="btn btn-red">Perfetto</button></form>
+    </dialog>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
