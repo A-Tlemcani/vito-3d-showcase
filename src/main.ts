@@ -126,6 +126,26 @@ form.addEventListener('submit', (e) => {
   form.reset(); dateIn.value = keepDate; partyIn.value = '2'; renderSlots();
 });
 
-// ---------- 3D hero (lazy)
-const start = () => import('./scene').then((m) => m.initScene($('scene') as HTMLCanvasElement));
-'requestIdleCallback' in window ? requestIdleCallback(start, { timeout: 1000 }) : setTimeout(start, 150);
+// ---------- Scroll story + 3D (lazy)
+const story = $('story');
+const chapters = [...story.querySelectorAll<HTMLElement>('.chapter')];
+const bar = $('story-bar');
+let sceneApi: { setProgress(p: number): void } | null = null;
+const onScroll = () => {
+  const r = story.getBoundingClientRect();
+  const p = Math.min(Math.max(-r.top / (r.height - innerHeight), 0), 1);
+  const idx = Math.min(chapters.length - 1, Math.floor(p * chapters.length * 0.999));
+  chapters.forEach((c, i) => c.classList.toggle('is-active', i === idx));
+  bar.style.setProperty('--p', String(p));
+  sceneApi?.setProgress(p);
+};
+addEventListener('scroll', onScroll, { passive: true });
+onScroll();
+const loader = $('loader');
+const start = () => import('./scene').then((m) => {
+  sceneApi = m.initScene($('scene') as HTMLCanvasElement,
+    (k) => { $('loader-pct').textContent = `${Math.round(k * 100)}%`; },
+    () => { loader.classList.add('done'); story.classList.add('ready'); onScroll(); });
+  if (!sceneApi) loader.classList.add('done');
+});
+'requestIdleCallback' in window ? requestIdleCallback(start, { timeout: 800 }) : setTimeout(start, 100);

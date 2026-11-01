@@ -4,17 +4,17 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="referrer" content="strict-origin-when-cross-origin" />
-    <title>Vitorio — Cucina italiana in Lyon · Book a table</title>
-    <meta name="description" content="Vitorio is an Italian restaurant in Lyon's Presqu'île: hand-made pasta, Roman classics and 300 Italian wines. See the menu and book a table online in seconds." />
+    <title>Aurelia — Cucina italiana in Lyon · Book a table</title>
+    <meta name="description" content="Aurelia is an Italian restaurant in Lyon's Presqu'île: hand-made pasta, Roman classics and 300 Italian wines. See the menu and book a table online in seconds." />
     <meta name="theme-color" content="#1a120d" />
-    <link rel="canonical" href="https://abdeltl.github.io/vitorio/" />
+    <link rel="canonical" href="https://abdeltl.github.io/restaurant-3d-showcase/" />
     <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
-    <meta property="og:title" content="Vitorio — Cucina italiana" />
+    <meta property="og:title" content="Aurelia — Cucina italiana" />
     <meta property="og:description" content="Hand-made pasta, Roman classics, 300 Italian wines. Book a table online." />
     <meta property="og:type" content="restaurant" />
     <script type="application/ld+json">
       {
-        "@context": "https://schema.org", "@type": "Restaurant", "name": "Vitorio",
+        "@context": "https://schema.org", "@type": "Restaurant", "name": "Aurelia",
         "servesCuisine": ["Italian"], "priceRange": "€€€", "acceptsReservations": true,
         "address": { "@type": "PostalAddress", "streetAddress": "12 rue Mercière (fictional)", "addressLocality": "Lyon", "postalCode": "69002", "addressCountry": "FR" },
         "openingHoursSpecification": [
@@ -28,28 +28,50 @@
   <body>
     <p class="demo-banner">Concept demo by <a href="https://abdeltl.github.io/" target="_blank" rel="noopener noreferrer">Abderrahman Tlemcani</a>: fictional restaurant, reservations are simulated.</p>
     <header class="nav">
-      <a class="logo" href="#top">Vitorio</a>
-      <nav aria-label="Primary"><a href="#storia">La storia</a><a href="#menu">Menu</a><a href="#visit">Visit</a></nav>
+      <a class="logo" href="#top">Aurelia</a>
+      <nav aria-label="Primary"><a href="#storia">La storia</a><a href="#menu">Menu</a><a href="#visit">Visit</a><a href="#for-owners">For owners</a></nav>
       <a class="btn btn-red" href="#prenota">Book a table</a>
     </header>
     <main id="top">
-      <section class="hero" data-webgl>
-        <canvas id="scene" aria-hidden="true"></canvas>
-        <div class="hero-copy">
-          <p class="kicker">Cucina italiana · Lyon · dal 1987</p>
-          <h1>La dolce<br /><i>vita</i>, served<br />nightly.</h1>
-          <p class="sub">Hand-made pasta every morning, Roman classics, and three hundred Italian wines in the cellar beneath your table.</p>
-          <div class="actions"><a class="btn btn-red" href="#prenota">Prenota un tavolo</a><a class="btn btn-ghost" href="#menu">See the menu</a></div>
+      <section class="story" id="story" data-webgl aria-label="Introduction">
+        <div class="story-sticky">
+          <canvas id="scene" aria-hidden="true"></canvas>
+          <div class="shade" aria-hidden="true"></div>
+          <p class="loader" id="loader" role="status"><span id="loader-pct">0%</span> setting the table…</p>
+          <div class="chapters">
+            <article class="chapter is-active">
+              <p class="kicker">Cucina italiana · Lyon · dal 1987</p>
+              <h1>La dolce <i>vita</i>,<br />served nightly.</h1>
+              <p class="sub">Hand-made pasta every morning, Roman classics, and three hundred Italian wines in the cellar beneath your table.</p>
+              <div class="actions"><a class="btn btn-red" href="#prenota">Prenota un tavolo</a><a class="btn btn-ghost" href="#menu">See the menu</a></div>
+            </article>
+            <article class="chapter">
+              <p class="kicker">Dal mercato</p>
+              <h2>Lemons from Amalfi.<br />Bread from the oven next door.</h2>
+              <p class="sub">The menu is written every morning at the Croix-Rousse market. What isn't fresh isn't served.</p>
+            </article>
+            <article class="chapter">
+              <p class="kicker">La cantina</p>
+              <h2>Three hundred wines,<br />one sommelier who knows them all.</h2>
+              <p class="sub">From Etna to the Langhe. Giulia pours by the glass, so you can travel across Italy in one dinner.</p>
+            </article>
+            <article class="chapter">
+              <p class="kicker">Stasera</p>
+              <h2>Your table is <i>waiting</i>.</h2>
+              <div class="actions"><a class="btn btn-red" href="#prenota">Book in 30 seconds</a></div>
+            </article>
+          </div>
+          <div class="story-progress" aria-hidden="true"><span id="story-bar"></span></div>
+          <p class="scroll-cue" aria-hidden="true">Scroll</p>
         </div>
-        <p class="hero-badge" aria-hidden="true"><span>Pasta fresca</span><span>·</span><span>Vini naturali</span><span>·</span><span>Forno a legna</span></p>
       </section>
 
-      <section class="story" id="storia">
+      <section class="storia" id="storia">
         <div class="story-num"><strong>1987</strong><span>Nonna Lucia opens a six-table trattoria on rue Mercière.</span></div>
         <div class="story-copy">
           <p class="kicker">La storia</p>
           <h2>Three generations, one recipe book.</h2>
-          <p>Vitorio began as Lucia Vitorio's trattoria, with handwritten recipes from Rome and Bologna. Today her grandson Marco cooks from the same notebook, with produce from Lyon's markets and a wood-fired oven built by hand in 2019.</p>
+          <p>Aurelia began as Nonna Lucia's trattoria, with handwritten recipes from Rome and Bologna. Today her grandson Marco cooks from the same notebook, with produce from Lyon's markets and a wood-fired oven built by hand in 2019.</p>
           <ul class="numbers"><li><strong>38</strong>years of service</li><li><strong>300+</strong>Italian wines</li><li><strong>6 kg</strong>of pasta rolled daily</li></ul>
         </div>
       </section>
@@ -102,10 +124,24 @@
           <button class="btn btn-red btn-block" type="submit">Confirm reservation</button>
         </form>
       </section>
+      <section class="pitch" id="for-owners" aria-labelledby="pitch-title">
+        <div class="pitch-head">
+          <p class="kicker">For restaurant owners</p>
+          <h2 id="pitch-title">Your dining room, in 3D, on your own website.</h2>
+          <p>This page is a demo. Here is how we would make yours, with your real room, your real dishes and no invented photos.</p>
+        </div>
+        <ol class="pitch-steps">
+          <li><strong>1 · Scan visit</strong><span>A two-person team comes before service (about 90 minutes). We scan the dining room and terrace with a LiDAR phone and a gimbal camera to make a Gaussian-splat 3D scan: real light, real textures.</span></li>
+          <li><strong>2 · Signature dishes</strong><span>Five to eight dishes shot on a turntable (photogrammetry) and turned into light 3D models, so guests see the plate before they book.</span></li>
+          <li><strong>3 · The website</strong><span>Scroll story like the one above, menu, live table booking connected to your system (TheFork, Zenchef or your own), Google-ready structured data.</span></li>
+          <li><strong>4 · Launch & care</strong><span>Fast on phones (3D loads after the page), works without 3D, updated each season when the menu changes.</span></li>
+        </ol>
+        <p class="pitch-note">What you provide: one morning of access and your menu. What you get: a site guests remember, and bookings without platform commission.</p>
+      </section>
     </main>
     <footer class="footer">
-      <p class="logo">Vitorio</p>
-      <p>Design & development: <a href="https://abdeltl.github.io/" target="_blank" rel="noopener noreferrer">Abderrahman Tlemcani</a> · Demo website: no real reservations.</p>
+      <p class="logo">Aurelia</p>
+      <p>Design & development: <a href="https://abdeltl.github.io/" target="_blank" rel="noopener noreferrer">Abderrahman Tlemcani</a> · Demo website: no real reservations · 3D models & HDRI: <a href="https://polyhaven.com/" target="_blank" rel="noopener noreferrer">Poly Haven</a> (CC0)</p>
     </footer>
     <dialog id="done" class="done">
       <form method="dialog"><p class="kicker">Grazie!</p><h2 id="done-title"></h2><p id="done-body"></p><button class="btn btn-red">Perfetto</button></form>
