@@ -6,11 +6,11 @@ import { defineConfig, type Plugin } from 'vite';
  */
 const CSP = [
   "default-src 'self'",
-  "script-src 'self'",
+  "script-src 'self' 'wasm-unsafe-eval'", // meshopt mesh decoder (WebAssembly)
   "style-src 'self'",
-  "img-src 'self' data:",
+  "img-src 'self' data: blob:", // GLB-embedded textures are decoded via blob: URLs
   "font-src 'self'",
-  "connect-src 'self'",
+  "connect-src 'self' blob:",
   "object-src 'none'",
   "base-uri 'self'",
   "form-action 'self' mailto:",
