@@ -2,9 +2,9 @@
 
 A premium restaurant website with a sculpted 3D hero (lathe-turned wine glass, physical materials), a filterable menu, and table reservations with live slot availability.
 
-**Live demo → [https://abdeltl.github.io/restaurant-3d-showcase/](https://abdeltl.github.io/restaurant-3d-showcase/)**
+**Live demo → [https://a-tlemcani.github.io/vito-3d-showcase/](https://a-tlemcani.github.io/vito-3d-showcase/)**
 
-![Screenshot](https://abdeltl.github.io/work/restaurant-3d-showcase.jpg)
+![Screenshot](https://a-tlemcani.github.io/work/vito-3d-showcase.jpg)
 
 ## Highlights
 - **Cinematic scroll story:** the page opens on a dressed trattoria table and the camera glides through four chapters as you scroll (establishing → lemons on the board → the wine → overhead), with copy that fades in for each chapter.
@@ -33,7 +33,7 @@ npm run build    # typecheck + production build in dist/
 Every push to `main` builds and deploys to GitHub Pages via `.github/workflows/deploy.yml` (Settings → Pages → Source: *GitHub Actions*).
 
 ---
-Designed & developed by [Abderrahman Tlemcani](https://abdeltl.github.io/). The brand in this demo is fictional.
+Designed & developed by [Abderrahman Tlemcani](https://a-tlemcani.github.io/). The brand in this demo is fictional.
 
 ## Credits
 3D models and HDRI: [Poly Haven](https://polyhaven.com/) (CC0).

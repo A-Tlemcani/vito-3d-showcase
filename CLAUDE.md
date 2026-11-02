@@ -3,7 +3,7 @@
 Premium Italian restaurant website: 3D hero, filterable menu, table reservation with live slot availability.
 
 ## Stack
-Vite 8 + TypeScript (strict) + Three.js, no framework. Static build in `dist/`, deployed by `.github/workflows/deploy.yml` to GitHub Pages (https://abdeltl.github.io/restaurant-3d-showcase/).
+Vite 8 + TypeScript (strict) + Three.js, no framework. Static build in `dist/`, deployed by `.github/workflows/deploy.yml` to GitHub Pages (https://a-tlemcani.github.io/vito-3d-showcase/).
 
 ## Commands
 - `npm ci --ignore-scripts` – install (lockfile is the source of truth)

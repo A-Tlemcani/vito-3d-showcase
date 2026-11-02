@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://abdeltl.github.io/restaurant-3d-showcase/sitemap.xml
+Sitemap: https://a-tlemcani.github.io/vito-3d-showcase/sitemap.xml
